@@ -3,263 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium Moped & Bicycle POS System - AWWARDS Quality Design">
+    <meta name="theme-color" content="#0a0f1d">
     <title>URBAN GARAGE | Premium Moped & Bicycle POS</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏍️</text></svg>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'garage-dark': '#0a0f1d',
-                        'garage-darker': '#070b14',
-                        'garage-blue': '#4361ee',
-                        'garage-cyan': '#4cc9f0',
-                        'garage-teal': '#06d6a0',
-                        'garage-purple': '#7209b7',
-                        'garage-pink': '#f72585',
-                        'garage-yellow': '#ffd166',
-                        'garage-gray': '#6c757d',
-                        'garage-light': '#f8f9fa'
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'glow': 'glow 2s ease-in-out infinite alternate',
-                        'fade-in': 'fadeIn 0.5s ease-out forwards'
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' }
-                        },
-                        glow: {
-                            '0%': { boxShadow: '0 0 5px rgba(67, 97, 238, 0.5)' },
-                            '100%': { boxShadow: '0 0 20px rgba(67, 97, 238, 0.8)' }
-                        },
-                        fadeIn: {
-                            '0%': { opacity: '0', transform: 'translateY(10px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' }
-                        }
-                    },
-                    fontFamily: {
-                        'sans': ['Inter', 'sans-serif'],
-                        'display': ['Space Grotesk', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        * {
-            scrollbar-width: thin;
-            scrollbar-color: #4361ee #0a0f1d;
-        }
-        
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: #0a0f1d;
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background-color: #4361ee;
-            border-radius: 10px;
-            border: 2px solid #0a0f1d;
-        }
-        
-        .glass-card {
-            background: rgba(25, 35, 65, 0.75);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        }
-        
-        .neon-border {
-            box-shadow: 
-                0 0 5px rgba(67, 97, 238, 0.5),
-                0 0 15px rgba(67, 97, 238, 0.3),
-                inset 0 0 8px rgba(76, 201, 240, 0.4);
-            border: 1px solid rgba(67, 97, 238, 0.6);
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 
-                0 10px 25px rgba(0, 0, 0, 0.4),
-                0 0 15px rgba(67, 97, 238, 0.3);
-        }
-        
-        .category-badge:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 10px rgba(76, 201, 240, 0.5);
-        }
-        
-        .cart-item {
-            transition: all 0.3s ease;
-        }
-        
-        .cart-item:hover {
-            transform: translateX(5px);
-            background: rgba(35, 45, 75, 0.8);
-        }
-        
-        .pulse-ring {
-            position: relative;
-            border-radius: 50%;
-            animation: pulse-slow;
-        }
-        
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .glow-on-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .glow-on-hover:hover {
-            animation: glow 1.5s ease-in-out infinite alternate;
-        }
-        
-        .fade-in {
-            animation: fade-in 0.6s ease-out forwards;
-        }
-        
-        .stagger-item {
-            opacity: 0;
-        }
-        
-        .hero-bg {
-            background: 
-                radial-gradient(circle at 10% 20%, rgba(67, 97, 238, 0.15) 0%, transparent 25%),
-                radial-gradient(circle at 90% 80%, rgba(76, 201, 240, 0.15) 0%, transparent 25%),
-                radial-gradient(circle at 50% 50%, rgba(6, 214, 160, 0.1) 0%, transparent 35%),
-                linear-gradient(135deg, #0a0f1d 0%, #0d1428 100%);
-        }
-        
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .stat-card {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                45deg,
-                transparent 33%,
-                rgba(255, 255, 255, 0.1) 45%,
-                rgba(255, 255, 255, 0.15) 50%,
-                rgba(255, 255, 255, 0.1) 55%,
-                transparent 67%
-            );
-            transform: rotate(45deg);
-            animation: shimmer 2.5s infinite;
-        }
-        
-        @keyframes shimmer {
-            0% { transform: rotate(45deg) translateX(-100%); }
-            100% { transform: rotate(45deg) translateX(100%); }
-        }
-        
-        .tool-icon {
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .tool-icon::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-        
-        .tool-icon:hover::after {
-            left: 100%;
-        }
-        
-        .tool-icon:hover {
-            transform: scale(1.1);
-        }
-        
-        .order-card {
-            transition: all 0.4s ease;
-            border-left: 4px solid #4361ee;
-        }
-        
-        .order-card:hover {
-            transform: translateX(5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            border-left: 4px solid #f72585;
-        }
-        
-        .progress-bar {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .progress-bar::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                90deg,
-                transparent 0%,
-                rgba(67, 97, 238, 0.2) 50%,
-                transparent 100%
-            );
-            animation: progress 2s infinite;
-        }
-        
-        @keyframes progress {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-        
-        .signature {
-            position: relative;
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.5rem;
-            background: linear-gradient(to right, #4361ee, #4cc9f0, #06d6a0);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-        
-        .signature::after {
-            content: '';
-            position: absolute;
-            bottom: 8px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(to right, #4361ee, #4cc9f0, #06d6a0, transparent);
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body class="bg-garage-darker text-garage-light font-sans min-h-screen flex flex-col">
     <!-- Navigation -->
@@ -304,15 +55,15 @@
             
             <div class="flex items-center space-x-4 mt-4 sm:mt-0">
                 <div class="relative">
-                    <input type="text" placeholder="Search products..." class="bg-garage-dark border border-garage-blue/30 rounded-lg py-2 px-4 pl-10 w-full sm:w-64 focus:outline-none focus:ring-2 focus:ring-garage-blue/50">
+                    <input type="text" id="global-search" placeholder="Search products..." class="bg-garage-dark border border-garage-blue/30 rounded-lg py-2 px-4 pl-10 w-full sm:w-64 focus:outline-none focus:ring-2 focus:ring-garage-blue/50">
                     <i class="fas fa-search absolute left-3 top-2.5 text-garage-gray"></i>
                 </div>
                 <div class="flex items-center space-x-3">
-                    <button class="relative text-garage-gray hover:text-garage-cyan transition">
+                    <button id="notifications-btn" class="relative text-garage-gray hover:text-garage-cyan transition">
                         <i class="fas fa-bell text-xl"></i>
-                        <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-garage-pink rounded-full">3</span>
+                        <span id="notification-count" class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-garage-pink rounded-full">3</span>
                     </button>
-                    <div class="flex items-center space-x-2 bg-garage-dark border border-garage-blue/30 rounded-lg py-1.5 px-3">
+                    <div id="user-menu" class="flex items-center space-x-2 bg-garage-dark border border-garage-blue/30 rounded-lg py-1.5 px-3 cursor-pointer">
                         <div class="w-8 h-8 rounded-full bg-gradient-to-br from-garage-purple to-garage-pink flex items-center justify-center">
                             <span class="font-bold text-white text-sm">AG</span>
                         </div>
@@ -341,11 +92,11 @@
                         </div>
                         <div class="mt-4 md:mt-0 flex space-x-3">
                             <div class="bg-garage-dark rounded-xl p-3 text-center">
-                                <div class="text-2xl font-bold text-garage-cyan">24</div>
+                                <div class="text-2xl font-bold text-garage-cyan" id="active-orders-count">24</div>
                                 <div class="text-xs text-garage-gray mt-1">Active Orders</div>
                             </div>
                             <div class="bg-garage-dark rounded-xl p-3 text-center">
-                                <div class="text-2xl font-bold text-garage-teal">18</div>
+                                <div class="text-2xl font-bold text-garage-teal" id="new-customers-count">18</div>
                                 <div class="text-xs text-garage-gray mt-1">New Customers</div>
                             </div>
                             <div class="bg-garage-dark rounded-xl p-3 text-center">
@@ -360,9 +111,9 @@
                             <div class="flex items-center justify-between mb-4">
                                 <h3 class="font-medium text-garage-gray">Revenue Overview</h3>
                                 <div class="flex space-x-2">
-                                    <button class="text-xs bg-garage-blue/20 text-garage-cyan px-2 py-1 rounded">Week</button>
-                                    <button class="text-xs bg-garage-dark text-garage-gray px-2 py-1 rounded">Month</button>
-                                    <button class="text-xs bg-garage-dark text-garage-gray px-2 py-1 rounded">Year</button>
+                                    <button class="period-btn text-xs bg-garage-blue/20 text-garage-cyan px-2 py-1 rounded active-period" data-period="week">Week</button>
+                                    <button class="period-btn text-xs bg-garage-dark text-garage-gray px-2 py-1 rounded" data-period="month">Month</button>
+                                    <button class="period-btn text-xs bg-garage-dark text-garage-gray px-2 py-1 rounded" data-period="year">Year</button>
                                 </div>
                             </div>
                             <div class="h-48 flex items-end justify-center">
@@ -435,7 +186,7 @@
                                 <div class="flex justify-between items-start">
                                     <div>
                                         <p class="text-xs text-garage-gray">Total Sales</p>
-                                        <p class="text-2xl font-bold mt-1">$1,842.50</p>
+                                        <p class="text-2xl font-bold mt-1" id="total-sales">$1,842.50</p>
                                     </div>
                                     <div class="text-green-400 text-sm flex items-center">
                                         <i class="fas fa-arrow-up mr-1"></i> 12.5%
@@ -449,7 +200,7 @@
                                 <div class="flex justify-between items-start">
                                     <div>
                                         <p class="text-xs text-garage-gray">New Orders</p>
-                                        <p class="text-2xl font-bold mt-1">14</p>
+                                        <p class="text-2xl font-bold mt-1" id="new-orders">14</p>
                                     </div>
                                     <div class="text-garage-cyan text-sm flex items-center">
                                         <i class="fas fa-equals mr-1"></i> Steady
@@ -496,16 +247,16 @@
                             Quick Actions
                         </h3>
                         <div class="space-y-3">
-                            <button class="w-full bg-gradient-to-r from-garage-blue to-garage-cyan text-white font-medium py-3 rounded-xl hover:opacity-90 transition flex items-center justify-center">
+                            <button id="new-sale-btn" class="w-full bg-gradient-to-r from-garage-blue to-garage-cyan text-white font-medium py-3 rounded-xl hover:opacity-90 transition flex items-center justify-center">
                                 <i class="fas fa-plus mr-2"></i> New Sale
                             </button>
-                            <button class="w-full bg-gradient-to-r from-garage-purple to-garage-pink text-white font-medium py-3 rounded-xl hover:opacity-90 transition flex items-center justify-center">
+                            <button id="add-customer-btn" class="w-full bg-gradient-to-r from-garage-purple to-garage-pink text-white font-medium py-3 rounded-xl hover:opacity-90 transition flex items-center justify-center">
                                 <i class="fas fa-user-plus mr-2"></i> Add Customer
                             </button>
-                            <button class="w-full bg-gradient-to-r from-garage-teal to-garage-yellow text-garage-dark font-medium py-3 rounded-xl hover:opacity-90 transition flex items-center justify-center">
+                            <button id="receive-inventory-btn" class="w-full bg-gradient-to-r from-garage-teal to-garage-yellow text-garage-dark font-medium py-3 rounded-xl hover:opacity-90 transition flex items-center justify-center">
                                 <i class="fas fa-box-open mr-2"></i> Receive Inventory
                             </button>
-                            <button class="w-full bg-garage-dark border border-garage-blue/30 text-garage-cyan font-medium py-3 rounded-xl hover:bg-garage-blue/10 transition flex items-center justify-center">
+                            <button id="print-report-btn" class="w-full bg-garage-dark border border-garage-blue/30 text-garage-cyan font-medium py-3 rounded-xl hover:bg-garage-blue/10 transition flex items-center justify-center">
                                 <i class="fas fa-print mr-2"></i> Print Report
                             </button>
                         </div>
@@ -522,111 +273,13 @@
                             <i class="fas fa-shopping-cart mr-2 text-garage-pink"></i>
                             Recent Orders
                         </h3>
-                        <button class="text-xs text-garage-cyan hover:text-white transition flex items-center">
+                        <button id="view-all-orders-btn" class="text-xs text-garage-cyan hover:text-white transition flex items-center">
                             View All <i class="fas fa-arrow-right ml-1 text-xs"></i>
                         </button>
                     </div>
                     
-                    <div class="space-y-4 max-h-96 overflow-y-auto pr-2">
-                        <div class="order-card bg-garage-dark rounded-xl p-4">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <div class="flex items-center">
-                                        <span class="font-bold">#ORD-8742</span>
-                                        <span class="ml-2 px-2 py-0.5 bg-garage-blue/20 text-garage-cyan text-xs rounded-full">Completed</span>
-                                    </div>
-                                    <p class="text-garage-gray mt-1">Mountain Bike Tune-up</p>
-                                </div>
-                                <div class="text-right">
-                                    <p class="font-bold">$129.99</p>
-                                    <p class="text-xs text-garage-gray mt-1">Today, 2:30 PM</p>
-                                </div>
-                            </div>
-                            <div class="mt-3 pt-3 border-t border-garage-blue/20 flex items-center justify-between">
-                                <div class="flex items-center">
-                                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-garage-purple to-garage-pink flex items-center justify-center">
-                                        <span class="text-white text-xs font-bold">MR</span>
-                                    </div>
-                                    <span class="ml-2 text-sm">Michael R.</span>
-                                </div>
-                                <button class="text-xs text-garage-cyan hover:text-white transition">View Details</button>
-                            </div>
-                        </div>
-                        
-                        <div class="order-card bg-garage-dark rounded-xl p-4">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <div class="flex items-center">
-                                        <span class="font-bold">#ORD-8741</span>
-                                        <span class="ml-2 px-2 py-0.5 bg-garage-yellow/20 text-garage-yellow text-xs rounded-full">In Progress</span>
-                                    </div>
-                                    <p class="text-garage-gray mt-1">Vintage Moped Restoration</p>
-                                </div>
-                                <div class="text-right">
-                                    <p class="font-bold">$849.50</p>
-                                    <p class="text-xs text-garage-gray mt-1">Today, 11:15 AM</p>
-                                </div>
-                            </div>
-                            <div class="mt-3 pt-3 border-t border-garage-blue/20 flex items-center justify-between">
-                                <div class="flex items-center">
-                                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-garage-teal to-garage-yellow flex items-center justify-center">
-                                        <span class="text-garage-dark text-xs font-bold">SJ</span>
-                                    </div>
-                                    <span class="ml-2 text-sm">Sarah J.</span>
-                                </div>
-                                <button class="text-xs text-garage-cyan hover:text-white transition">View Details</button>
-                            </div>
-                        </div>
-                        
-                        <div class="order-card bg-garage-dark rounded-xl p-4">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <div class="flex items-center">
-                                        <span class="font-bold">#ORD-8740</span>
-                                        <span class="ml-2 px-2 py-0.5 bg-garage-purple/20 text-garage-purple text-xs rounded-full">Pending</span>
-                                    </div>
-                                    <p class="text-garage-gray mt-1">Electric Bike Battery Replacement</p>
-                                </div>
-                                <div class="text-right">
-                                    <p class="font-bold">$215.00</p>
-                                    <p class="text-xs text-garage-gray mt-1">Yesterday, 4:45 PM</p>
-                                </div>
-                            </div>
-                            <div class="mt-3 pt-3 border-t border-garage-blue/20 flex items-center justify-between">
-                                <div class="flex items-center">
-                                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-garage-cyan to-garage-blue flex items-center justify-center">
-                                        <span class="text-white text-xs font-bold">DT</span>
-                                    </div>
-                                    <span class="ml-2 text-sm">David T.</span>
-                                </div>
-                                <button class="text-xs text-garage-cyan hover:text-white transition">View Details</button>
-                            </div>
-                        </div>
-                        
-                        <div class="order-card bg-garage-dark rounded-xl p-4">
-                            <div class="flex justify-between items-start">
-                                <div>
-                                    <div class="flex items-center">
-                                        <span class="font-bold">#ORD-8739</span>
-                                        <span class="ml-2 px-2 py-0.5 bg-garage-green/20 text-garage-green text-xs rounded-full">Completed</span>
-                                    </div>
-                                    <p class="text-garage-gray mt-1">Bicycle Safety Inspection</p>
-                                </div>
-                                <div class="text-right">
-                                    <p class="font-bold">$75.00</p>
-                                    <p class="text-xs text-garage-gray mt-1">Yesterday, 2:20 PM</p>
-                                </div>
-                            </div>
-                            <div class="mt-3 pt-3 border-t border-garage-blue/20 flex items-center justify-between">
-                                <div class="flex items-center">
-                                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-garage-pink to-garage-purple flex items-center justify-center">
-                                        <span class="text-white text-xs font-bold">AL</span>
-                                    </div>
-                                    <span class="ml-2 text-sm">Amanda L.</span>
-                                </div>
-                                <button class="text-xs text-garage-cyan hover:text-white transition">View Details</button>
-                            </div>
-                        </div>
+                    <div id="recent-orders-list" class="space-y-4 max-h-96 overflow-y-auto pr-2">
+                        <!-- Orders will be populated by JavaScript -->
                     </div>
                 </div>
                 
@@ -637,91 +290,13 @@
                             <i class="fas fa-exclamation-triangle mr-2 text-garage-yellow"></i>
                             Low Stock Items
                         </h3>
-                        <button class="text-xs text-garage-cyan hover:text-white transition flex items-center">
+                        <button id="view-inventory-btn" class="text-xs text-garage-cyan hover:text-white transition flex items-center">
                             View Inventory <i class="fas fa-arrow-right ml-1 text-xs"></i>
                         </button>
                     </div>
                     
-                    <div class="space-y-4 max-h-96 overflow-y-auto pr-2">
-                        <div class="bg-garage-dark rounded-xl p-4 flex items-center">
-                            <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-garage-purple to-garage-pink flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-helmet-battle text-white text-2xl"></i>
-                            </div>
-                            <div class="ml-4 flex-1">
-                                <h4 class="font-medium">Premium Bike Helmets</h4>
-                                <div class="mt-2 h-1.5 w-full bg-garage-gray/20 rounded-full overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-garage-pink to-garage-purple w-1/5"></div>
-                                </div>
-                                <div class="flex justify-between mt-1 text-xs">
-                                    <span class="text-garage-gray">Only 4 left</span>
-                                    <span class="text-garage-pink font-medium">Reorder Level: 10</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-garage-dark rounded-xl p-4 flex items-center">
-                            <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-garage-teal to-garage-yellow flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-tire text-white text-2xl"></i>
-                            </div>
-                            <div class="ml-4 flex-1">
-                                <h4 class="font-medium">Mountain Bike Tires (29")</h4>
-                                <div class="mt-2 h-1.5 w-full bg-garage-gray/20 rounded-full overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-garage-yellow to-garage-teal w-1/4"></div>
-                                </div>
-                                <div class="flex justify-between mt-1 text-xs">
-                                    <span class="text-garage-gray">Only 6 left</span>
-                                    <span class="text-garage-yellow font-medium">Reorder Level: 15</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-garage-dark rounded-xl p-4 flex items-center">
-                            <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-garage-blue to-garage-cyan flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-bolt text-white text-2xl"></i>
-                            </div>
-                            <div class="ml-4 flex-1">
-                                <h4 class="font-medium">E-Bike Batteries</h4>
-                                <div class="mt-2 h-1.5 w-full bg-garage-gray/20 rounded-full overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-garage-cyan to-garage-blue w-1/6"></div>
-                                </div>
-                                <div class="flex justify-between mt-1 text-xs">
-                                    <span class="text-garage-gray">Only 2 left</span>
-                                    <span class="text-garage-cyan font-medium">Reorder Level: 5</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-garage-dark rounded-xl p-4 flex items-center">
-                            <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-garage-purple to-garage-blue flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-lightbulb text-white text-2xl"></i>
-                            </div>
-                            <div class="ml-4 flex-1">
-                                <h4 class="font-medium">Bicycle LED Lights</h4>
-                                <div class="mt-2 h-1.5 w-full bg-garage-gray/20 rounded-full overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-garage-blue to-garage-purple w-1/3"></div>
-                                </div>
-                                <div class="flex justify-between mt-1 text-xs">
-                                    <span class="text-garage-gray">Only 8 left</span>
-                                    <span class="text-garage-purple font-medium">Reorder Level: 12</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-garage-dark rounded-xl p-4 flex items-center">
-                            <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-garage-pink to-garage-yellow flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-lock text-white text-2xl"></i>
-                            </div>
-                            <div class="ml-4 flex-1">
-                                <h4 class="font-medium">Heavy Duty Bike Locks</h4>
-                                <div class="mt-2 h-1.5 w-full bg-garage-gray/20 rounded-full overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-garage-yellow to-garage-pink w-2/5"></div>
-                                </div>
-                                <div class="flex justify-between mt-1 text-xs">
-                                    <span class="text-garage-gray">Only 9 left</span>
-                                    <span class="text-garage-pink font-medium">Reorder Level: 15</span>
-                                </div>
-                            </div>
-                        </div>
+                    <div id="low-stock-list" class="space-y-4 max-h-96 overflow-y-auto pr-2">
+                        <!-- Low stock items will be populated by JavaScript -->
                     </div>
                 </div>
             </div>
@@ -734,157 +309,37 @@
                     <h2 class="text-2xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-r from-garage-cyan to-garage-teal">Inventory Management</h2>
                     <div class="mt-4 sm:mt-0 flex flex-col sm:flex-row sm:space-x-4">
                         <div class="relative mb-3 sm:mb-0">
-                            <input type="text" placeholder="Search inventory..." class="bg-garage-dark border border-garage-blue/30 rounded-lg py-2.5 px-4 pl-10 w-full sm:w-64 focus:outline-none focus:ring-2 focus:ring-garage-blue/50">
+                            <input type="text" id="inventory-search" placeholder="Search inventory..." class="bg-garage-dark border border-garage-blue/30 rounded-lg py-2.5 px-4 pl-10 w-full sm:w-64 focus:outline-none focus:ring-2 focus:ring-garage-blue/50">
                             <i class="fas fa-search absolute left-3 top-2.5 text-garage-gray"></i>
                         </div>
-                        <button class="bg-gradient-to-r from-garage-purple to-garage-pink text-white font-medium py-2.5 px-6 rounded-lg hover:opacity-90 transition flex items-center justify-center">
+                        <button id="add-item-btn" class="bg-gradient-to-r from-garage-purple to-garage-pink text-white font-medium py-2.5 px-6 rounded-lg hover:opacity-90 transition flex items-center justify-center">
                             <i class="fas fa-plus mr-2"></i> Add New Item
                         </button>
                     </div>
                 </div>
                 
                 <div class="flex flex-wrap gap-2 mb-6">
-                    <button class="category-badge bg-garage-dark border border-garage-blue/30 text-garage-cyan px-4 py-1.5 rounded-full text-sm hover:bg-garage-blue/20 transition">All Items (142)</button>
-                    <button class="category-badge bg-garage-dark border border-garage-blue/30 text-garage-gray px-4 py-1.5 rounded-full text-sm hover:bg-garage-blue/20 transition">Mopeds (28)</button>
-                    <button class="category-badge bg-garage-dark border border-garage-blue/30 text-garage-gray px-4 py-1.5 rounded-full text-sm hover:bg-garage-blue/20 transition">Bicycles (45)</button>
-                    <button class="category-badge bg-garage-dark border border-garage-blue/30 text-garage-gray px-4 py-1.5 rounded-full text-sm hover:bg-garage-blue/20 transition">Parts (37)</button>
-                    <button class="category-badge bg-garage-dark border border-garage-blue/30 text-garage-gray px-4 py-1.5 rounded-full text-sm hover:bg-garage-blue/20 transition">Accessories (32)</button>
-                    <button class="category-badge bg-garage-dark border border-garage-yellow/30 text-garage-yellow px-4 py-1.5 rounded-full text-sm hover:bg-garage-yellow/20 transition">Low Stock (8)</button>
+                    <button class="category-badge bg-garage-dark border border-garage-blue/30 text-garage-cyan px-4 py-1.5 rounded-full text-sm hover:bg-garage-blue/20 transition active-category" data-category="all">All Items (<span id="total-items-count">142</span>)</button>
+                    <button class="category-badge bg-garage-dark border border-garage-blue/30 text-garage-gray px-4 py-1.5 rounded-full text-sm hover:bg-garage-blue/20 transition" data-category="mopeds">Mopeds (<span id="mopeds-count">28</span>)</button>
+                    <button class="category-badge bg-garage-dark border border-garage-blue/30 text-garage-gray px-4 py-1.5 rounded-full text-sm hover:bg-garage-blue/20 transition" data-category="bicycles">Bicycles (<span id="bicycles-count">45</span>)</button>
+                    <button class="category-badge bg-garage-dark border border-garage-blue/30 text-garage-gray px-4 py-1.5 rounded-full text-sm hover:bg-garage-blue/20 transition" data-category="parts">Parts (<span id="parts-count">37</span>)</button>
+                    <button class="category-badge bg-garage-dark border border-garage-blue/30 text-garage-gray px-4 py-1.5 rounded-full text-sm hover:bg-garage-blue/20 transition" data-category="accessories">Accessories (<span id="accessories-count">32</span>)</button>
+                    <button class="category-badge bg-garage-dark border border-garage-yellow/30 text-garage-yellow px-4 py-1.5 rounded-full text-sm hover:bg-garage-yellow/20 transition" data-category="lowstock">Low Stock (<span id="lowstock-count">8</span>)</button>
                 </div>
                 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-                    <!-- Product Card 1 -->
-                    <div class="product-card glass-card rounded-xl p-5">
-                        <div class="flex justify-between items-start">
-                            <div class="p-2 bg-garage-blue/10 rounded-lg">
-                                <i class="fas fa-motorcycle text-garage-cyan text-2xl"></i>
-                            </div>
-                            <span class="px-2 py-1 bg-garage-purple/20 text-garage-purple text-xs rounded-full">Premium</span>
-                        </div>
-                        <h3 class="font-bold text-lg mt-3">Vintage Vespa Moped</h3>
-                        <p class="text-garage-gray mt-1 text-sm">Classic 1970s model, fully restored</p>
-                        <div class="mt-4 flex justify-between items-end">
-                            <div>
-                                <p class="text-xs text-garage-gray">Price</p>
-                                <p class="font-bold text-xl">$1,899.00</p>
-                            </div>
-                            <div class="text-right">
-                                <p class="text-xs text-garage-gray">In Stock</p>
-                                <p class="font-bold text-garage-teal">5 units</p>
-                            </div>
-                        </div>
-                        <div class="mt-4 pt-4 border-t border-garage-blue/20 flex space-x-2">
-                            <button class="flex-1 bg-garage-dark border border-garage-blue/30 text-garage-cyan py-2 rounded-lg text-sm hover:bg-garage-blue/10 transition">
-                                <i class="fas fa-edit mr-1"></i> Edit
-                            </button>
-                            <button class="flex-1 bg-gradient-to-r from-garage-purple to-garage-pink text-white py-2 rounded-lg text-sm hover:opacity-90 transition">
-                                <i class="fas fa-shopping-cart mr-1"></i> Sell
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- Product Card 2 -->
-                    <div class="product-card glass-card rounded-xl p-5">
-                        <div class="flex justify-between items-start">
-                            <div class="p-2 bg-garage-teal/10 rounded-lg">
-                                <i class="fas fa-bicycle text-garage-teal text-2xl"></i>
-                            </div>
-                            <span class="px-2 py-1 bg-garage-yellow/20 text-garage-yellow text-xs rounded-full">New Arrival</span>
-                        </div>
-                        <h3 class="font-bold text-lg mt-3">Carbon Fiber Road Bike</h3>
-                        <p class="text-garage-gray mt-1 text-sm">Professional grade, lightweight frame</p>
-                        <div class="mt-4 flex justify-between items-end">
-                            <div>
-                                <p class="text-xs text-garage-gray">Price</p>
-                                <p class="font-bold text-xl">$2,499.00</p>
-                            </div>
-                            <div class="text-right">
-                                <p class="text-xs text-garage-gray">In Stock</p>
-                                <p class="font-bold text-garage-teal">3 units</p>
-                            </div>
-                        </div>
-                        <div class="mt-4 pt-4 border-t border-garage-blue/20 flex space-x-2">
-                            <button class="flex-1 bg-garage-dark border border-garage-blue/30 text-garage-cyan py-2 rounded-lg text-sm hover:bg-garage-blue/10 transition">
-                                <i class="fas fa-edit mr-1"></i> Edit
-                            </button>
-                            <button class="flex-1 bg-gradient-to-r from-garage-purple to-garage-pink text-white py-2 rounded-lg text-sm hover:opacity-90 transition">
-                                <i class="fas fa-shopping-cart mr-1"></i> Sell
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- Product Card 3 -->
-                    <div class="product-card glass-card rounded-xl p-5">
-                        <div class="flex justify-between items-start">
-                            <div class="p-2 bg-garage-yellow/10 rounded-lg">
-                                <i class="fas fa-helmet-battle text-garage-yellow text-2xl"></i>
-                            </div>
-                            <span class="px-2 py-1 bg-garage-pink/20 text-garage-pink text-xs rounded-full">Low Stock</span>
-                        </div>
-                        <h3 class="font-bold text-lg mt-3">Premium Safety Helmet</h3>
-                        <p class="text-garage-gray mt-1 text-sm">MIPS technology, multi-impact protection</p>
-                        <div class="mt-4 flex justify-between items-end">
-                            <div>
-                                <p class="text-xs text-garage-gray">Price</p>
-                                <p class="font-bold text-xl">$129.99</p>
-                            </div>
-                            <div class="text-right">
-                                <p class="text-xs text-garage-gray">In Stock</p>
-                                <p class="font-bold text-garage-pink">4 units</p>
-                            </div>
-                        </div>
-                        <div class="mt-4 pt-4 border-t border-garage-blue/20 flex space-x-2">
-                            <button class="flex-1 bg-garage-dark border border-garage-blue/30 text-garage-cyan py-2 rounded-lg text-sm hover:bg-garage-blue/10 transition">
-                                <i class="fas fa-edit mr-1"></i> Edit
-                            </button>
-                            <button class="flex-1 bg-gradient-to-r from-garage-purple to-garage-pink text-white py-2 rounded-lg text-sm hover:opacity-90 transition">
-                                <i class="fas fa-shopping-cart mr-1"></i> Sell
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- Product Card 4 -->
-                    <div class="product-card glass-card rounded-xl p-5">
-                        <div class="flex justify-between items-start">
-                            <div class="p-2 bg-garage-purple/10 rounded-lg">
-                                <i class="fas fa-bolt text-garage-purple text-2xl"></i>
-                            </div>
-                            <span class="px-2 py-1 bg-garage-cyan/20 text-garage-cyan text-xs rounded-full">Best Seller</span>
-                        </div>
-                        <h3 class="font-bold text-lg mt-3">E-Bike Conversion Kit</h3>
-                        <p class="text-garage-gray mt-1 text-sm">Turn any bike into an electric bike</p>
-                        <div class="mt-4 flex justify-between items-end">
-                            <div>
-                                <p class="text-xs text-garage-gray">Price</p>
-                                <p class="font-bold text-xl">$549.00</p>
-                            </div>
-                            <div class="text-right">
-                                <p class="text-xs text-garage-gray">In Stock</p>
-                                <p class="font-bold text-garage-teal">12 units</p>
-                            </div>
-                        </div>
-                        <div class="mt-4 pt-4 border-t border-garage-blue/20 flex space-x-2">
-                            <button class="flex-1 bg-garage-dark border border-garage-blue/30 text-garage-cyan py-2 rounded-lg text-sm hover:bg-garage-blue/10 transition">
-                                <i class="fas fa-edit mr-1"></i> Edit
-                            </button>
-                            <button class="flex-1 bg-gradient-to-r from-garage-purple to-garage-pink text-white py-2 rounded-lg text-sm hover:opacity-90 transition">
-                                <i class="fas fa-shopping-cart mr-1"></i> Sell
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- More product cards would continue here -->
+                <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                    <!-- Products will be populated by JavaScript -->
                 </div>
                 
-                <div class="mt-8 flex justify-center">
+                <div id="pagination" class="mt-8 flex justify-center hidden">
                     <nav class="flex items-center space-x-2">
-                        <button class="w-10 h-10 rounded-lg bg-garage-dark border border-garage-blue/30 text-garage-gray hover:bg-garage-blue/20 transition">
+                        <button class="page-btn w-10 h-10 rounded-lg bg-garage-dark border border-garage-blue/30 text-garage-gray hover:bg-garage-blue/20 transition" data-page="prev">
                             <i class="fas fa-chevron-left"></i>
                         </button>
-                        <button class="w-10 h-10 rounded-lg bg-garage-blue/20 text-garage-cyan font-bold">1</button>
-                        <button class="w-10 h-10 rounded-lg bg-garage-dark border border-garage-blue/30 text-garage-gray hover:bg-garage-blue/20 transition">2</button>
-                        <button class="w-10 h-10 rounded-lg bg-garage-dark border border-garage-blue/30 text-garage-gray hover:bg-garage-blue/20 transition">3</button>
-                        <button class="w-10 h-10 rounded-lg bg-garage-dark border border-garage-blue/30 text-garage-gray hover:bg-garage-blue/20 transition">
+                        <button class="page-btn w-10 h-10 rounded-lg bg-garage-blue/20 text-garage-cyan font-bold" data-page="1">1</button>
+                        <button class="page-btn w-10 h-10 rounded-lg bg-garage-dark border border-garage-blue/30 text-garage-gray hover:bg-garage-blue/20 transition" data-page="2">2</button>
+                        <button class="page-btn w-10 h-10 rounded-lg bg-garage-dark border border-garage-blue/30 text-garage-gray hover:bg-garage-blue/20 transition" data-page="3">3</button>
+                        <button class="page-btn w-10 h-10 rounded-lg bg-garage-dark border border-garage-blue/30 text-garage-gray hover:bg-garage-blue/20 transition" data-page="next">
                             <i class="fas fa-chevron-right"></i>
                         </button>
                     </nav>
@@ -896,19 +351,19 @@
                 <div class="glass-card rounded-2xl p-6 neon-border">
                     <h3 class="font-display font-bold text-lg mb-4">Inventory Value</h3>
                     <div class="text-center py-8">
-                        <div class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-garage-cyan to-garage-teal">$84,327.50</div>
+                        <div class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-garage-cyan to-garage-teal" id="inventory-value">$84,327.50</div>
                         <p class="text-garage-gray mt-2">Total value of all inventory items</p>
                         <div class="mt-6 flex justify-center space-x-6">
                             <div class="text-center">
-                                <div class="text-2xl font-bold text-garage-cyan">142</div>
+                                <div class="text-2xl font-bold text-garage-cyan" id="total-items-display">142</div>
                                 <div class="text-xs text-garage-gray mt-1">Total Items</div>
                             </div>
                             <div class="text-center">
-                                <div class="text-2xl font-bold text-garage-purple">8</div>
+                                <div class="text-2xl font-bold text-garage-purple" id="low-stock-display">8</div>
                                 <div class="text-xs text-garage-gray mt-1">Low Stock</div>
                             </div>
                             <div class="text-center">
-                                <div class="text-2xl font-bold text-garage-teal">24</div>
+                                <div class="text-2xl font-bold text-garage-teal" id="new-this-month">24</div>
                                 <div class="text-xs text-garage-gray mt-1">New This Month</div>
                             </div>
                         </div>
@@ -918,52 +373,14 @@
                 <div class="glass-card rounded-2xl p-6 neon-border">
                     <h3 class="font-display font-bold text-lg mb-4">Stock Movement</h3>
                     <div class="h-64 flex items-center justify-center">
-                        <div class="text-center">
-                            <div class="text-5xl font-bold text-garage-purple mb-4">📊</div>
-                            <p class="text-garage-gray">Stock movement chart would appear here in a real application</p>
-                        </div>
+                        <canvas id="stockMovementChart" class="w-full h-full"></canvas>
                     </div>
                 </div>
                 
                 <div class="glass-card rounded-2xl p-6 neon-border">
                     <h3 class="font-display font-bold text-lg mb-4">Top Selling Categories</h3>
-                    <div class="space-y-4 mt-4">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm">Bicycles</span>
-                                <span class="text-sm font-medium text-garage-teal">42%</span>
-                            </div>
-                            <div class="h-2 w-full bg-garage-gray/20 rounded-full overflow-hidden">
-                                <div class="h-full bg-gradient-to-r from-garage-teal to-garage-cyan w-5/12"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm">Accessories</span>
-                                <span class="text-sm font-medium text-garage-purple">28%</span>
-                            </div>
-                            <div class="h-2 w-full bg-garage-gray/20 rounded-full overflow-hidden">
-                                <div class="h-full bg-gradient-to-r from-garage-purple to-garage-pink w-4/12"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm">Parts</span>
-                                <span class="text-sm font-medium text-garage-yellow">18%</span>
-                            </div>
-                            <div class="h-2 w-full bg-garage-gray/20 rounded-full overflow-hidden">
-                                <div class="h-full bg-gradient-to-r from-garage-yellow to-garage-teal w-3/12"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm">Mopeds</span>
-                                <span class="text-sm font-medium text-garage-cyan">12%</span>
-                            </div>
-                            <div class="h-2 w-full bg-garage-gray/20 rounded-full overflow-hidden">
-                                <div class="h-full bg-gradient-to-r from-garage-cyan to-garage-blue w-2/12"></div>
-                            </div>
-                        </div>
+                    <div id="category-stats" class="space-y-4 mt-4">
+                        <!-- Category stats will be populated by JavaScript -->
                     </div>
                 </div>
             </div>
@@ -979,7 +396,7 @@
                             <h2 class="text-2xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-r from-garage-cyan to-garage-teal">POS Terminal</h2>
                             <div class="flex items-center space-x-3">
                                 <div class="text-center">
-                                    <div class="text-2xl font-bold text-garage-cyan">TXN-9876</div>
+                                    <div class="text-2xl font-bold text-garage-cyan" id="transaction-id">TXN-9876</div>
                                     <div class="text-xs text-garage-gray mt-1">Transaction ID</div>
                                 </div>
                                 <div class="w-px h-10 bg-garage-blue/30 mx-3"></div>
@@ -991,131 +408,58 @@
                         </div>
                         
                         <!-- Customer Info -->
-                        <div class="bg-garage-dark rounded-xl p-4 mb-6">
+                        <div id="customer-info" class="bg-garage-dark rounded-xl p-4 mb-6">
                             <div class="flex items-center justify-between">
                                 <div class="flex items-center">
                                     <div class="w-12 h-12 rounded-full bg-gradient-to-br from-garage-purple to-garage-pink flex items-center justify-center">
                                         <span class="text-white text-lg font-bold">CR</span>
                                     </div>
                                     <div class="ml-3">
-                                        <p class="font-medium">Christopher Rodriguez</p>
+                                        <p class="font-medium" id="customer-name">Christopher Rodriguez</p>
                                         <p class="text-xs text-garage-gray">Member since 2021</p>
                                     </div>
                                 </div>
-                                <button class="text-xs bg-garage-blue/20 text-garage-cyan px-3 py-1 rounded-full hover:bg-garage-blue/30 transition">
+                                <button id="change-customer-btn" class="text-xs bg-garage-blue/20 text-garage-cyan px-3 py-1 rounded-full hover:bg-garage-blue/30 transition">
                                     <i class="fas fa-edit mr-1"></i> Change Customer
                                 </button>
                             </div>
                         </div>
                         
                         <!-- Cart Items -->
-                        <div class="max-h-96 overflow-y-auto pr-2 mb-6">
-                            <div class="cart-item bg-garage-dark rounded-xl p-4 mb-3 flex items-center">
-                                <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-garage-blue to-garage-cyan flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-motorcycle text-white text-xl"></i>
-                                </div>
-                                <div class="ml-4 flex-1">
-                                    <div class="flex justify-between">
-                                        <h4 class="font-medium">Vintage Vespa Moped</h4>
-                                        <button class="text-garage-gray hover:text-red-400 transition">
-                                            <i class="fas fa-times"></i>
-                                        </button>
-                                    </div>
-                                    <div class="mt-2 flex justify-between items-end">
-                                        <div>
-                                            <p class="text-xs text-garage-gray">Qty: 1</p>
-                                            <p class="text-sm font-medium mt-1">$1,899.00</p>
-                                        </div>
-                                        <div class="flex items-center space-x-2">
-                                            <button class="w-6 h-6 rounded-full bg-garage-blue/20 text-garage-cyan flex items-center justify-center">-</button>
-                                            <span class="font-medium">1</span>
-                                            <button class="w-6 h-6 rounded-full bg-garage-blue/20 text-garage-cyan flex items-center justify-center">+</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="cart-item bg-garage-dark rounded-xl p-4 mb-3 flex items-center">
-                                <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-garage-teal to-garage-yellow flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-helmet-battle text-white text-xl"></i>
-                                </div>
-                                <div class="ml-4 flex-1">
-                                    <div class="flex justify-between">
-                                        <h4 class="font-medium">Premium Safety Helmet</h4>
-                                        <button class="text-garage-gray hover:text-red-400 transition">
-                                            <i class="fas fa-times"></i>
-                                        </button>
-                                    </div>
-                                    <div class="mt-2 flex justify-between items-end">
-                                        <div>
-                                            <p class="text-xs text-garage-gray">Qty: 2</p>
-                                            <p class="text-sm font-medium mt-1">$129.99</p>
-                                        </div>
-                                        <div class="flex items-center space-x-2">
-                                            <button class="w-6 h-6 rounded-full bg-garage-teal/20 text-garage-teal flex items-center justify-center">-</button>
-                                            <span class="font-medium">2</span>
-                                            <button class="w-6 h-6 rounded-full bg-garage-teal/20 text-garage-teal flex items-center justify-center">+</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="cart-item bg-garage-dark rounded-xl p-4 mb-3 flex items-center">
-                                <div class="w-16 h-16 rounded-lg bg-gradient-to-br from-garage-purple to-garage-pink flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-bolt text-white text-xl"></i>
-                                </div>
-                                <div class="ml-4 flex-1">
-                                    <div class="flex justify-between">
-                                        <h4 class="font-medium">E-Bike Conversion Kit</h4>
-                                        <button class="text-garage-gray hover:text-red-400 transition">
-                                            <i class="fas fa-times"></i>
-                                        </button>
-                                    </div>
-                                    <div class="mt-2 flex justify-between items-end">
-                                        <div>
-                                            <p class="text-xs text-garage-gray">Qty: 1</p>
-                                            <p class="text-sm font-medium mt-1">$549.00</p>
-                                        </div>
-                                        <div class="flex items-center space-x-2">
-                                            <button class="w-6 h-6 rounded-full bg-garage-purple/20 text-garage-purple flex items-center justify-center">-</button>
-                                            <span class="font-medium">1</span>
-                                            <button class="w-6 h-6 rounded-full bg-garage-purple/20 text-garage-purple flex items-center justify-center">+</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div id="cart-items" class="max-h-96 overflow-y-auto pr-2 mb-6">
+                            <!-- Cart items will be populated by JavaScript -->
                         </div>
                         
                         <!-- Order Summary -->
                         <div class="bg-garage-dark rounded-xl p-5">
                             <div class="flex justify-between mb-3">
                                 <span class="text-garage-gray">Subtotal</span>
-                                <span class="font-medium">$2,727.98</span>
+                                <span class="font-medium" id="subtotal-amount">$0.00</span>
                             </div>
                             <div class="flex justify-between mb-3">
                                 <span class="text-garage-gray">Tax (8.5%)</span>
-                                <span class="font-medium">$231.88</span>
+                                <span class="font-medium" id="tax-amount">$0.00</span>
                             </div>
                             <div class="flex justify-between mb-4 pb-4 border-b border-garage-blue/20">
                                 <span class="text-garage-gray">Discount</span>
-                                <span class="font-medium text-garage-green">-$100.00</span>
+                                <span class="font-medium text-garage-green" id="discount-amount">$0.00</span>
                             </div>
                             <div class="flex justify-between items-center mb-6">
                                 <span class="text-xl font-bold">Total</span>
-                                <span class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-garage-cyan to-garage-teal">$2,859.86</span>
+                                <span class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-garage-cyan to-garage-teal" id="total-amount">$0.00</span>
                             </div>
                             
                             <div class="grid grid-cols-2 gap-3">
-                                <button class="bg-gradient-to-r from-garage-purple to-garage-pink text-white font-medium py-3.5 rounded-xl hover:opacity-90 transition flex items-center justify-center">
+                                <button id="card-payment-btn" class="bg-gradient-to-r from-garage-purple to-garage-pink text-white font-medium py-3.5 rounded-xl hover:opacity-90 transition flex items-center justify-center">
                                     <i class="fas fa-credit-card mr-2"></i> Card Payment
                                 </button>
-                                <button class="bg-gradient-to-r from-garage-teal to-garage-yellow text-garage-dark font-medium py-3.5 rounded-xl hover:opacity-90 transition flex items-center justify-center">
+                                <button id="mobile-pay-btn" class="bg-gradient-to-r from-garage-teal to-garage-yellow text-garage-dark font-medium py-3.5 rounded-xl hover:opacity-90 transition flex items-center justify-center">
                                     <i class="fas fa-mobile-alt mr-2"></i> Mobile Pay
                                 </button>
-                                <button class="bg-garage-dark border border-garage-blue/30 text-garage-cyan font-medium py-3.5 rounded-xl hover:bg-garage-blue/10 transition flex items-center justify-center">
+                                <button id="cash-payment-btn" class="bg-garage-dark border border-garage-blue/30 text-garage-cyan font-medium py-3.5 rounded-xl hover:bg-garage-blue/10 transition flex items-center justify-center">
                                     <i class="fas fa-cash-register mr-2"></i> Cash
                                 </button>
-                                <button class="bg-garage-dark border border-garage-gray/30 text-garage-gray font-medium py-3.5 rounded-xl hover:bg-garage-gray/10 transition flex items-center justify-center">
+                                <button id="new-transaction-btn" class="bg-garage-dark border border-garage-gray/30 text-garage-gray font-medium py-3.5 rounded-xl hover:bg-garage-gray/10 transition flex items-center justify-center">
                                     <i class="fas fa-sync-alt mr-2"></i> New Transaction
                                 </button>
                             </div>
@@ -1128,43 +472,8 @@
                             <i class="fas fa-fire mr-2 text-garage-yellow"></i>
                             Quick Add Items
                         </h3>
-                        <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
-                            <button class="bg-garage-dark border border-garage-blue/30 rounded-xl p-3 hover:bg-garage-blue/10 transition text-left">
-                                <div class="w-10 h-10 mx-auto rounded-full bg-garage-blue/20 flex items-center justify-center mb-2">
-                                    <i class="fas fa-tshirt text-garage-cyan"></i>
-                                </div>
-                                <p class="text-xs font-medium text-center">Bike Apparel</p>
-                            </button>
-                            <button class="bg-garage-dark border border-garage-blue/30 rounded-xl p-3 hover:bg-garage-purple/10 transition text-left">
-                                <div class="w-10 h-10 mx-auto rounded-full bg-garage-purple/20 flex items-center justify-center mb-2">
-                                    <i class="fas fa-shoe-prints text-garage-purple"></i>
-                                </div>
-                                <p class="text-xs font-medium text-center">Cycling Shoes</p>
-                            </button>
-                            <button class="bg-garage-dark border border-garage-blue/30 rounded-xl p-3 hover:bg-garage-teal/10 transition text-left">
-                                <div class="w-10 h-10 mx-auto rounded-full bg-garage-teal/20 flex items-center justify-center mb-2">
-                                    <i class="fas fa-glasses text-garage-teal"></i>
-                                </div>
-                                <p class="text-xs font-medium text-center">Eyewear</p>
-                            </button>
-                            <button class="bg-garage-dark border border-garage-blue/30 rounded-xl p-3 hover:bg-garage-yellow/10 transition text-left">
-                                <div class="w-10 h-10 mx-auto rounded-full bg-garage-yellow/20 flex items-center justify-center mb-2">
-                                    <i class="fas fa-battery-full text-garage-yellow"></i>
-                                </div>
-                                <p class="text-xs font-medium text-center">Batteries</p>
-                            </button>
-                            <button class="bg-garage-dark border border-garage-blue/30 rounded-xl p-3 hover:bg-garage-pink/10 transition text-left">
-                                <div class="w-10 h-10 mx-auto rounded-full bg-garage-pink/20 flex items-center justify-center mb-2">
-                                    <i class="fas fa-lock text-garage-pink"></i>
-                                </div>
-                                <p class="text-xs font-medium text-center">Bike Locks</p>
-                            </button>
-                            <button class="bg-garage-dark border border-garage-blue/30 rounded-xl p-3 hover:bg-garage-cyan/10 transition text-left">
-                                <div class="w-10 h-10 mx-auto rounded-full bg-garage-cyan/20 flex items-center justify-center mb-2">
-                                    <i class="fas fa-lightbulb text-garage-cyan"></i>
-                                </div>
-                                <p class="text-xs font-medium text-center">Bike Lights</p>
-                            </button>
+                        <div id="quick-items" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
+                            <!-- Quick items will be populated by JavaScript -->
                         </div>
                     </div>
                 </div>
@@ -1174,99 +483,13 @@
                     <div class="glass-card rounded-2xl p-6 neon-border mb-6">
                         <div class="flex justify-between items-center mb-5">
                             <h3 class="font-display font-bold text-lg">Product Catalog</h3>
-                            <button class="text-xs text-garage-cyan hover:text-white transition">
+                            <button id="view-all-catalog-btn" class="text-xs text-garage-cyan hover:text-white transition">
                                 View All <i class="fas fa-arrow-right ml-1"></i>
                             </button>
                         </div>
                         
-                        <div class="space-y-3 max-h-[600px] overflow-y-auto pr-2">
-                            <div class="flex items-center p-2 hover:bg-garage-blue/10 rounded-lg transition cursor-pointer">
-                                <div class="w-10 h-10 rounded-lg bg-garage-blue/20 flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-motorcycle text-garage-cyan"></i>
-                                </div>
-                                <div class="ml-3 flex-1">
-                                    <p class="font-medium text-sm">Vintage Vespa Moped</p>
-                                    <p class="text-xs text-garage-gray mt-0.5">$1,899.00</p>
-                                </div>
-                                <button class="text-xs bg-garage-blue/20 text-garage-cyan px-2.5 py-1 rounded-full">Add</button>
-                            </div>
-                            
-                            <div class="flex items-center p-2 hover:bg-garage-purple/10 rounded-lg transition cursor-pointer">
-                                <div class="w-10 h-10 rounded-lg bg-garage-purple/20 flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-bicycle text-garage-purple"></i>
-                                </div>
-                                <div class="ml-3 flex-1">
-                                    <p class="font-medium text-sm">Carbon Fiber Road Bike</p>
-                                    <p class="text-xs text-garage-gray mt-0.5">$2,499.00</p>
-                                </div>
-                                <button class="text-xs bg-garage-purple/20 text-garage-purple px-2.5 py-1 rounded-full">Add</button>
-                            </div>
-                            
-                            <div class="flex items-center p-2 hover:bg-garage-teal/10 rounded-lg transition cursor-pointer">
-                                <div class="w-10 h-10 rounded-lg bg-garage-teal/20 flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-helmet-battle text-garage-teal"></i>
-                                </div>
-                                <div class="ml-3 flex-1">
-                                    <p class="font-medium text-sm">Premium Safety Helmet</p>
-                                    <p class="text-xs text-garage-gray mt-0.5">$129.99</p>
-                                </div>
-                                <button class="text-xs bg-garage-teal/20 text-garage-teal px-2.5 py-1 rounded-full">Add</button>
-                            </div>
-                            
-                            <div class="flex items-center p-2 hover:bg-garage-yellow/10 rounded-lg transition cursor-pointer">
-                                <div class="w-10 h-10 rounded-lg bg-garage-yellow/20 flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-bolt text-garage-yellow"></i>
-                                </div>
-                                <div class="ml-3 flex-1">
-                                    <p class="font-medium text-sm">E-Bike Conversion Kit</p>
-                                    <p class="text-xs text-garage-gray mt-0.5">$549.00</p>
-                                </div>
-                                <button class="text-xs bg-garage-yellow/20 text-garage-yellow px-2.5 py-1 rounded-full">Add</button>
-                            </div>
-                            
-                            <div class="flex items-center p-2 hover:bg-garage-pink/10 rounded-lg transition cursor-pointer">
-                                <div class="w-10 h-10 rounded-lg bg-garage-pink/20 flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-tire text-garage-pink"></i>
-                                </div>
-                                <div class="ml-3 flex-1">
-                                    <p class="font-medium text-sm">Mountain Bike Tires</p>
-                                    <p class="text-xs text-garage-gray mt-0.5">$59.99</p>
-                                </div>
-                                <button class="text-xs bg-garage-pink/20 text-garage-pink px-2.5 py-1 rounded-full">Add</button>
-                            </div>
-                            
-                            <div class="flex items-center p-2 hover:bg-garage-cyan/10 rounded-lg transition cursor-pointer">
-                                <div class="w-10 h-10 rounded-lg bg-garage-cyan/20 flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-bell text-garage-cyan"></i>
-                                </div>
-                                <div class="ml-3 flex-1">
-                                    <p class="font-medium text-sm">Bicycle Bell Set</p>
-                                    <p class="text-xs text-garage-gray mt-0.5">$24.99</p>
-                                </div>
-                                <button class="text-xs bg-garage-cyan/20 text-garage-cyan px-2.5 py-1 rounded-full">Add</button>
-                            </div>
-                            
-                            <div class="flex items-center p-2 hover:bg-garage-blue/10 rounded-lg transition cursor-pointer">
-                                <div class="w-10 h-10 rounded-lg bg-garage-blue/20 flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-tools text-garage-blue"></i>
-                                </div>
-                                <div class="ml-3 flex-1">
-                                    <p class="font-medium text-sm">Repair Toolkit Pro</p>
-                                    <p class="text-xs text-garage-gray mt-0.5">$89.99</p>
-                                </div>
-                                <button class="text-xs bg-garage-blue/20 text-garage-blue px-2.5 py-1 rounded-full">Add</button>
-                            </div>
-                            
-                            <div class="flex items-center p-2 hover:bg-garage-purple/10 rounded-lg transition cursor-pointer">
-                                <div class="w-10 h-10 rounded-lg bg-garage-purple/20 flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-shield-alt text-garage-purple"></i>
-                                </div>
-                                <div class="ml-3 flex-1">
-                                    <p class="font-medium text-sm">Frame Protection Kit</p>
-                                    <p class="text-xs text-garage-gray mt-0.5">$34.99</p>
-                                </div>
-                                <button class="text-xs bg-garage-purple/20 text-garage-purple px-2.5 py-1 rounded-full">Add</button>
-                            </div>
+                        <div id="product-catalog" class="space-y-3 max-h-[600px] overflow-y-auto pr-2">
+                            <!-- Product catalog will be populated by JavaScript -->
                         </div>
                     </div>
                     
@@ -1277,11 +500,11 @@
                             Customer Display
                         </h3>
                         <div class="bg-garage-dark rounded-xl p-5 text-center">
-                            <div class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-garage-cyan to-garage-teal mb-2">$2,859.86</div>
+                            <div class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-garage-cyan to-garage-teal mb-2" id="customer-total">$0.00</div>
                             <p class="text-garage-gray mb-4">Total Amount Due</p>
                             <div class="flex justify-center space-x-4 mb-6">
                                 <div class="text-center">
-                                    <div class="text-2xl font-bold text-garage-cyan">3</div>
+                                    <div class="text-2xl font-bold text-garage-cyan" id="cart-item-count">0</div>
                                     <div class="text-xs text-garage-gray mt-1">Items</div>
                                 </div>
                                 <div class="text-center">
@@ -1289,12 +512,12 @@
                                     <div class="text-xs text-garage-gray mt-1">Tax Rate</div>
                                 </div>
                                 <div class="text-center">
-                                    <div class="text-2xl font-bold text-garage-purple">$100</div>
+                                    <div class="text-2xl font-bold text-garage-purple" id="applied-discount">$0</div>
                                     <div class="text-xs text-garage-gray mt-1">Discount</div>
                                 </div>
                             </div>
                             <div class="bg-garage-blue/10 border border-garage-blue/30 rounded-lg p-3">
-                                <p class="font-medium">Christopher Rodriguez</p>
+                                <p class="font-medium" id="customer-display-name">Customer</p>
                                 <p class="text-sm text-garage-gray mt-1">Thank you for your business!</p>
                                 <p class="text-xs text-garage-cyan mt-2">URBAN GARAGE • 123 Mechanic Lane • (555) 123-4567</p>
                             </div>
@@ -1304,26 +527,224 @@
             </div>
         </div>
         
-        <!-- Other views (customers, analytics) would be implemented similarly -->
+        <!-- Customers View -->
         <div id="customers-view" class="view-content hidden">
-            <div class="text-center py-20">
-                <div class="text-6xl mb-6">👥</div>
-                <h2 class="text-3xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-r from-garage-cyan to-garage-teal mb-4">Customer Management</h2>
-                <p class="text-garage-gray max-w-2xl mx-auto mb-8">This AWWARDS-quality POS system includes a comprehensive customer management module with profiles, purchase history, loyalty programs, and communication tools. This section would be fully implemented in the complete application.</p>
-                <button class="bg-gradient-to-r from-garage-blue to-garage-cyan text-white font-medium py-3 px-8 rounded-xl hover:opacity-90 transition text-lg">
-                    <i class="fas fa-users mr-2"></i>View Customer Database
-                </button>
+            <div class="glass-card rounded-2xl p-6 neon-border mb-6">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
+                    <h2 class="text-2xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-r from-garage-cyan to-garage-teal">Customer Management</h2>
+                    <div class="mt-4 sm:mt-0 flex space-x-3">
+                        <div class="relative">
+                            <input type="text" id="customer-search" placeholder="Search customers..." class="bg-garage-dark border border-garage-blue/30 rounded-lg py-2.5 px-4 pl-10 w-full sm:w-64 focus:outline-none focus:ring-2 focus:ring-garage-blue/50">
+                            <i class="fas fa-search absolute left-3 top-2.5 text-garage-gray"></i>
+                        </div>
+                        <button id="add-new-customer-btn" class="bg-gradient-to-r from-garage-purple to-garage-pink text-white font-medium py-2.5 px-6 rounded-lg hover:opacity-90 transition flex items-center">
+                            <i class="fas fa-user-plus mr-2"></i> Add Customer
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="bg-garage-dark rounded-xl p-4 flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-garage-blue to-garage-cyan flex items-center justify-center flex-shrink-0">
+                            <span class="text-white text-lg font-bold">CR</span>
+                        </div>
+                        <div class="ml-4 flex-1">
+                            <h4 class="font-medium">Christopher Rodriguez</h4>
+                            <p class="text-xs text-garage-gray mt-1">christopher@email.com</p>
+                            <p class="text-xs text-garage-gray">Member since 2021</p>
+                        </div>
+                        <button class="text-xs bg-garage-blue/20 text-garage-cyan px-3 py-1 rounded-full">View</button>
+                    </div>
+                    
+                    <div class="bg-garage-dark rounded-xl p-4 flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-garage-purple to-garage-pink flex items-center justify-center flex-shrink-0">
+                            <span class="text-white text-lg font-bold">SJ</span>
+                        </div>
+                        <div class="ml-4 flex-1">
+                            <h4 class="font-medium">Sarah Johnson</h4>
+                            <p class="text-xs text-garage-gray mt-1">sarah@email.com</p>
+                            <p class="text-xs text-garage-gray">Member since 2022</p>
+                        </div>
+                        <button class="text-xs bg-garage-purple/20 text-garage-purple px-3 py-1 rounded-full">View</button>
+                    </div>
+                    
+                    <div class="bg-garage-dark rounded-xl p-4 flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-garage-teal to-garage-yellow flex items-center justify-center flex-shrink-0">
+                            <span class="text-garage-dark text-lg font-bold">DT</span>
+                        </div>
+                        <div class="ml-4 flex-1">
+                            <h4 class="font-medium">David Thompson</h4>
+                            <p class="text-xs text-garage-gray mt-1">david@email.com</p>
+                            <p class="text-xs text-garage-gray">Member since 2023</p>
+                        </div>
+                        <button class="text-xs bg-garage-teal/20 text-garage-teal px-3 py-1 rounded-full">View</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="glass-card rounded-2xl p-6 neon-border">
+                    <h3 class="font-display font-bold text-lg mb-4">Customer Statistics</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between">
+                            <span class="text-garage-gray">Total Customers</span>
+                            <span class="font-bold text-2xl text-garage-cyan">156</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-garage-gray">Active This Month</span>
+                            <span class="font-bold text-2xl text-garage-teal">42</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-garage-gray">Average Order Value</span>
+                            <span class="font-bold text-2xl text-garage-purple">$347.50</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-garage-gray">Loyalty Members</span>
+                            <span class="font-bold text-2xl text-garage-yellow">89</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card rounded-2xl p-6 neon-border">
+                    <h3 class="font-display font-bold text-lg mb-4">Recent Activity</h3>
+                    <div class="space-y-3 max-h-96 overflow-y-auto pr-2">
+                        <div class="bg-garage-dark rounded-lg p-3">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="font-medium">Christopher Rodriguez</p>
+                                    <p class="text-xs text-garage-gray mt-1">Purchased Vintage Vespa Moped</p>
+                                </div>
+                                <span class="text-xs text-garage-gray">Today, 2:30 PM</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-garage-dark rounded-lg p-3">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="font-medium">Sarah Johnson</p>
+                                    <p class="text-xs text-garage-gray mt-1">Scheduled service appointment</p>
+                                </div>
+                                <span class="text-xs text-garage-gray">Today, 11:15 AM</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-garage-dark rounded-lg p-3">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="font-medium">David Thompson</p>
+                                    <p class="text-xs text-garage-gray mt-1">Purchased E-Bike Conversion Kit</p>
+                                </div>
+                                <span class="text-xs text-garage-gray">Yesterday, 4:45 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         
+        <!-- Analytics View -->
         <div id="analytics-view" class="view-content hidden">
-            <div class="text-center py-20">
-                <div class="text-6xl mb-6">📈</div>
-                <h2 class="text-3xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-r from-garage-purple to-garage-pink mb-4">Business Analytics</h2>
-                <p class="text-garage-gray max-w-2xl mx-auto mb-8">Our analytics dashboard provides deep insights into sales trends, inventory performance, customer behavior, and financial metrics with beautiful interactive visualizations. This section would be fully implemented with real-time data in the complete application.</p>
-                <button class="bg-gradient-to-r from-garage-purple to-garage-pink text-white font-medium py-3 px-8 rounded-xl hover:opacity-90 transition text-lg">
-                    <i class="fas fa-chart-line mr-2"></i>View Analytics Dashboard
-                </button>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                <div class="glass-card rounded-2xl p-6 neon-border">
+                    <h3 class="font-display font-bold text-lg mb-4">Revenue Trends</h3>
+                    <div class="h-80">
+                        <canvas id="revenueTrendsChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="glass-card rounded-2xl p-6 neon-border">
+                    <h3 class="font-display font-bold text-lg mb-4">Sales Performance</h3>
+                    <div class="h-80">
+                        <canvas id="salesPerformanceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="glass-card rounded-2xl p-6 neon-border">
+                    <h3 class="font-display font-bold text-lg mb-4">Top Products</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">Vintage Vespa Moped</span>
+                                <span class="text-sm font-medium text-garage-cyan">$18,990</span>
+                            </div>
+                            <div class="h-2 w-full bg-garage-gray/20 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-garage-cyan to-garage-blue w-10/12"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">Carbon Fiber Road Bike</span>
+                                <span class="text-sm font-medium text-garage-purple">$14,994</span>
+                            </div>
+                            <div class="h-2 w-full bg-garage-gray/20 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-garage-purple to-garage-pink w-8/12"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm">E-Bike Conversion Kit</span>
+                                <span class="text-sm font-medium text-garage-teal">$8,235</span>
+                            </div>
+                            <div class="h-2 w-full bg-garage-gray/20 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-garage-teal to-garage-yellow w-6/12"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card rounded-2xl p-6 neon-border">
+                    <h3 class="font-display font-bold text-lg mb-4">Customer Insights</h3>
+                    <div class="h-64 flex items-center justify-center">
+                        <canvas id="customerInsightsChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="glass-card rounded-2xl p-6 neon-border">
+                    <h3 class="font-display font-bold text-lg mb-4">Business Metrics</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-xs text-garage-gray">Monthly Revenue</p>
+                                <p class="text-2xl font-bold mt-1">$24,850</p>
+                            </div>
+                            <div class="text-green-400 text-sm">
+                                <i class="fas fa-arrow-up mr-1"></i> 15.3%
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-xs text-garage-gray">Average Order Value</p>
+                                <p class="text-2xl font-bold mt-1">$347.50</p>
+                            </div>
+                            <div class="text-garage-cyan text-sm">
+                                <i class="fas fa-equals mr-1"></i> Steady
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-xs text-garage-gray">Customer Retention</p>
+                                <p class="text-2xl font-bold mt-1">78%</p>
+                            </div>
+                            <div class="text-green-400 text-sm">
+                                <i class="fas fa-arrow-up mr-1"></i> 8.2%
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-xs text-garage-gray">Inventory Turnover</p>
+                                <p class="text-2xl font-bold mt-1">4.2x</p>
+                            </div>
+                            <div class="text-red-400 text-sm">
+                                <i class="fas fa-arrow-down mr-1"></i> 3.1%
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -1359,72 +780,22 @@
         <div class="max-w-7xl mx-auto mt-6 pt-6 border-t border-garage-blue/20 flex flex-col sm:flex-row sm:items-center sm:justify-between">
             <p class="text-xs text-garage-gray text-center sm:text-left">© 2026 Urban Garage POS. All rights reserved. AWWARDS Quality Web Application.</p>
             <div class="mt-3 sm:mt-0 flex justify-center space-x-4">
-                <button class="w-8 h-8 rounded-full bg-garage-blue/20 text-garage-cyan flex items-center justify-center hover:bg-garage-blue/30 transition">
+                <a href="#" class="w-8 h-8 rounded-full bg-garage-blue/20 text-garage-cyan flex items-center justify-center hover:bg-garage-blue/30 transition">
                     <i class="fab fa-facebook-f"></i>
-                </button>
-                <button class="w-8 h-8 rounded-full bg-garage-cyan/20 text-garage-cyan flex items-center justify-center hover:bg-garage-cyan/30 transition">
+                </a>
+                <a href="#" class="w-8 h-8 rounded-full bg-garage-cyan/20 text-garage-cyan flex items-center justify-center hover:bg-garage-cyan/30 transition">
                     <i class="fab fa-instagram"></i>
-                </button>
-                <button class="w-8 h-8 rounded-full bg-garage-purple/20 text-garage-purple flex items-center justify-center hover:bg-garage-purple/30 transition">
+                </a>
+                <a href="#" class="w-8 h-8 rounded-full bg-garage-purple/20 text-garage-purple flex items-center justify-center hover:bg-garage-purple/30 transition">
                     <i class="fab fa-twitter"></i>
-                </button>
-                <button class="w-8 h-8 rounded-full bg-garage-pink/20 text-garage-pink flex items-center justify-center hover:bg-garage-pink/30 transition">
+                </a>
+                <a href="#" class="w-8 h-8 rounded-full bg-garage-pink/20 text-garage-pink flex items-center justify-center hover:bg-garage-pink/30 transition">
                     <i class="fab fa-pinterest"></i>
-                </button>
+                </a>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Navigation functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-            
-            // Navigation links
-            const navLinks = document.querySelectorAll('.nav-link');
-            const views = document.querySelectorAll('.view-content');
-            
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    // Update active link
-                    navLinks.forEach(l => l.classList.remove('active', 'text-white', 'bg-garage-blue/20'));
-                    link.classList.add('active', 'text-white', 'bg-garage-blue/20');
-                    
-                    // Show selected view
-                    const targetView = link.getAttribute('data-target');
-                    views.forEach(view => {
-                        view.classList.add('hidden');
-                    });
-                    document.getElementById(`${targetView}-view`).classList.remove('hidden');
-                });
-            });
-            
-            // Initialize with dashboard view
-            document.querySelector('.nav-link[data-target="dashboard"]').click();
-            
-            // Simulate chart initialization (in a real app, we'd use Chart.js)
-            setTimeout(() => {
-                document.querySelectorAll('.progress-bar').forEach(el => {
-                    el.style.opacity = '0.7';
-                });
-            }, 500);
-            
-            // Add staggered animation to dashboard items
-            setTimeout(() => {
-                document.querySelectorAll('.stagger-item').forEach((el, index) => {
-                    setTimeout(() => {
-                        el.classList.remove('stagger-item');
-                        el.classList.add('fade-in');
-                    }, 300 + (index * 100));
-                });
-            }, 600);
-        });
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
