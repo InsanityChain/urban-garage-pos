@@ -1,0 +1,55 @@
+{
+  "name": "URBAN GARAGE POS",
+  "short_name": "Urban POS",
+  "description": "Premium Moped & Bicycle Point of Sale System",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0f1d",
+  "theme_color": "#4361ee",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "screenshots": [
+    {
+      "src": "/screenshot-dashboard.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "platform": "wide"
+    },
+    {
+      "src": "/screenshot-pos.png",
+      "sizes": "1280x800",
+      "type": "image/png",
+      "platform": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "New Sale",
+      "short_name": "Sale",
+      "description": "Start a new transaction",
+      "url": "/?view=pos",
+      "icons": [{ "src": "/icon-sale.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Inventory",
+      "short_name": "Inventory",
+      "description": "View and manage inventory",
+      "url": "/?view=inventory",
+      "icons": [{ "src": "/icon-inventory.png", "sizes": "192x192" }]
+    }
+  ]
+}

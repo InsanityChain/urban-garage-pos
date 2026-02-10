@@ -1,0 +1,39 @@
+{
+  "name": "urban-garage-pos",
+  "version": "2.0.0",
+  "description": "Premium Moped & Bicycle Point of Sale System - AWWARDS Quality",
+  "main": "index.html",
+  "scripts": {
+    "start": "browser-sync start --server --files '**/*'",
+    "build": "echo 'No build required - static site'",
+    "test": "echo 'No tests configured'",
+    "lint": "eslint *.js",
+    "deploy": "netlify deploy --prod",
+    "preview": "netlify deploy --draft"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InsanityChain/urban-garage-pos.git"
+  },
+  "keywords": [
+    "pos",
+    "point-of-sale",
+    "garage",
+    "moped",
+    "bicycle",
+    "retail",
+    "inventory",
+    "awwwards"
+  ],
+  "author": "Urban Garage Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/InsanityChain/urban-garage-pos/issues"
+  },
+  "homepage": "https://urban-garage-pos.netlify.app",
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "eslint": "^8.56.0",
+    "netlify-cli": "^17.21.0"
+  }
+}

@@ -1,0 +1,64 @@
+# Netlify Configuration File
+# URBAN GARAGE POS - Production Settings
+
+[build]
+  command = "echo 'No build required - static site'"
+  publish = "/"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+[[headers]]
+  for = "/app.js"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/styles.css"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+# Split Testing Configuration
+[[context.production.split_testing]]
+  enabled = true
+  split_count = 2
+
+# Environment Variables
+[context.production.environment]
+  SITE_NAME = "URBAN GARAGE POS"
+  ENVIRONMENT = "production"
+
+[context.deploy-preview.environment]
+  ENVIRONMENT = "preview"
+
+[context.branch-deploy.environment]
+  ENVIRONMENT = "development"
+
+# Security Headers for API endpoints (if added later)
+[[redirects]]
+  from = "/.netlify/functions/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+  force = true
+
+# Custom 404 page
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
